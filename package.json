@@ -7,7 +7,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "generate-types": "typechain --target=truffle-v5 \"build/contracts/*.json\"",
+    "ganache": "ganache -p 7545",
+    "export-abi": "cp ./build/*.json ../dapp/src/abi/",
+    "generate-types": "typechain --target=truffle-v5 \"build/*.json\"",
     "postinstall": "yarn compile",
     "migrate": "tsc -p ./tsconfig.migrate.json --outDir ./migrations && truffle migrate",
     "typecheck": "tsc --noEmit",

@@ -12,3 +12,5 @@ migrations
 
 # Environment Variables
 .env
+
+yarn-error.log

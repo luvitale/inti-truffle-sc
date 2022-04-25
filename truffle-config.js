@@ -8,6 +8,9 @@ const GAS = 3000000;
 const GASPRICE = 5;
 const SKIP_DRY_RUN = false;
 
+const CONTRACTS_DIRECTORY = "./contracts/";
+const CONTRACTS_BUILD_DIRECTORY ="./build/";
+
 module.exports = {
   // Configure your compilers
   compilers: {
@@ -15,8 +18,8 @@ module.exports = {
       version: "0.8.7", // Fetch exact version from solc-bin (default: truffle's version)
     },
   },
-  contracts_directory: "./contracts/",
-  contracts_build_directory: "./build/",
+  contracts_directory: CONTRACTS_DIRECTORY,
+  contracts_build_directory: CONTRACTS_BUILD_DIRECTORY,
   plugins: ["truffle-plugin-verify"],
   api_keys: {
     etherscan: ETHERSCAN_API_KEY,
@@ -140,6 +143,21 @@ module.exports = {
     rsk_test: {
       provider: () => new HDWalletProvider(MNEMONIC, `https://public-node.testnet.rsk.co`),
       network_id: 31,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    // bfa
+    bfa: {
+      provider: () => new HDWalletProvider(MNEMONIC, `http://public.bfa.ar:8545`),
+      network_id: 200941592,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    bfa_test: {
+      provider: () => new HDWalletProvider(MNEMONIC, `http://public.test2.bfa.ar:8545`),
+      network_id: 99118822,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true
