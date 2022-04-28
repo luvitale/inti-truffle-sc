@@ -1,7 +1,7 @@
 {
-  "name": "truffle-sc",
+  "name": "inti-truffle-sc",
   "private": false,
-  "description": "Truffle Smart Contracts.",
+  "description": "INTI Truffle Smart Contracts",
   "version": "1.0.0",
   "author": "Luciano Nahuel Vitale <lucianonahuelvitale@gmail.com>",
   "main": "index.js",
