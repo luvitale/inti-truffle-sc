@@ -7,7 +7,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "ganache": "ganache -p 7545",
+    "ganache": "ganache -p 8545",
     "export-abi": "cp ./build/*.json ../dapp/src/abi/",
     "generate-types": "typechain --target=truffle-v5 \"build/*.json\"",
     "postinstall": "yarn compile",

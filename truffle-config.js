@@ -11,6 +11,8 @@ const SKIP_DRY_RUN = false;
 const CONTRACTS_DIRECTORY = "./contracts/";
 const CONTRACTS_BUILD_DIRECTORY ="./build/";
 
+const LOCALHOST_PORT = 8545;
+
 module.exports = {
   // Configure your compilers
   compilers: {
@@ -27,7 +29,7 @@ module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 7545,
+      port: LOCALHOST_PORT,
       network_id: "*", // Any network (default: none)
     },
     main: {
@@ -44,11 +46,12 @@ module.exports = {
       provider: () =>
         new HDWalletProvider(
           MNEMONIC,
-          `https://ropsten.infura.io/v3/${INFURA_PROJECT_ID}`
+          `wss://ropsten.infura.io/ws/v3/${INFURA_PROJECT_ID}`
         ),
       network_id: 3,
       gas: 5500000,
       gasPrice: 10e9,
+      networkCheckTimeout: 1000000,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,

@@ -9,6 +9,8 @@ contract('Voting', (accounts) => {
 
     const BC_CANDIDATE = web3.utils.asciiToHex("BC");
     
+    console.log(BC_CANDIDATE);
+    
     const votesBefore = (await votingInstance.getReceivedVotes(BC_CANDIDATE)).toNumber();
     await votingInstance.vote(BC_CANDIDATE, {from: accounts[0]});
     const votesAfter = (await votingInstance.getReceivedVotes(BC_CANDIDATE)).toNumber();
